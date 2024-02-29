@@ -144,12 +144,12 @@ def get_model():
     labels=[]
     mapping_link = f"https://raw.githubusercontent.com/cardiffnlp/tweeteval/main/datasets/{task}/mapping.txt"
     with urllib.request.urlopen(mapping_link) as f:
-    html = f.read().decode('utf-8').split("\n")
-    csvreader = csv.reader(html, delimiter='\t')
-    labels = [row[1] for row in csvreader if len(row) > 1]
-    model = AutoModelForSequenceClassification.from_pretrained(MODEL)
+      html = f.read().decode('utf-8').split("\n")
+      csvreader = csv.reader(html, delimiter='\t')
+      labels = [row[1] for row in csvreader if len(row) > 1]
+      model = AutoModelForSequenceClassification.from_pretrained(MODEL)
     
-    return tokenizer,model
+      return tokenizer,model
 
 
 tokenizer, model = get_model()
