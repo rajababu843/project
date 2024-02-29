@@ -172,7 +172,7 @@ else:
         fig, ax = plt.subplots()
         ax.imshow(wordcloud_image_sadness)
         st.pyplot(fig)
-          if fear_data.shape[0] != 0:
+    if fear_data.shape[0] != 0:
         st.title("WordCloud fear")
         wordcloud_image_fear = helper.create_word_cloud(selected_user, fear_data)
         fig, ax = plt.subplots()
